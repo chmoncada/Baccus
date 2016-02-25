@@ -3,6 +3,7 @@ package com.emoshiapps.baccus.controller.fragment;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -75,6 +76,19 @@ public class WineFragment extends Fragment {
         mWineGrapesContainer = (ViewGroup) root.findViewById(R.id.grapes_container);
         mGoToWebButton = (ImageButton) root.findViewById(R.id.go_to_web_button);
 
+        //Aplicamos fuente a los textos de la vista
+
+        Typeface font = Typeface.createFromAsset(getActivity().getAssets(), "Valentina-Regular.otf");
+        mWineNameText.setTypeface(font);
+        mWineTypeText.setTypeface(font);
+        mWineCompanyText.setTypeface(font);
+        mWineNotesText.setTypeface(font);
+        mWineOriginText.setTypeface(font);
+        ((TextView)root.findViewById(R.id.wine_company_subtitle)).setTypeface(font);
+        ((TextView)root.findViewById(R.id.wine_type_subtitle)).setTypeface(font);
+        ((TextView)root.findViewById(R.id.wine_origin_subtitle)).setTypeface(font);
+        ((TextView)root.findViewById(R.id.grape_container_subtitle)).setTypeface(font);
+
         //Damos valor a las vistas con el modelo
 
         AsyncTask<Void,Void,Bitmap> wineImageDowloader = new AsyncTask<Void, Void, Bitmap>() {
@@ -104,7 +118,7 @@ public class WineFragment extends Fragment {
             TextView grapeText = new TextView(getActivity());
             grapeText.setText(mWine.getGrape(i));
             grapeText.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-
+            grapeText.setTypeface(font);
             mWineGrapesContainer.addView(grapeText);
 
         }

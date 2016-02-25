@@ -8,7 +8,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.emoshiapps.baccus.WineActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/fondo">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -17,13 +18,20 @@
         android:layout_weight="1">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:id="@+id/wine_image"
             android:src="@drawable/bembibre"
              android:layout_weight="1"
             android:adjustViewBounds="false"
             />
+
+        <ScrollView
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:id="@+id/scrollView3">
 
         <LinearLayout
             android:orientation="vertical"
@@ -35,7 +43,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="wine name"
-                android:id="@+id/wine_name"/>
+                android:id="@+id/wine_name"
+                style="@style/WineTitle"/>
             <RatingBar
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -44,6 +53,14 @@
                 android:layout_centerVertical="true"
                 android:layout_alignParentLeft="true"
                 />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BODEGA DEL VINO"
+                android:id="@+id/wine_company_subtitle"
+                android:singleLine="true"
+                style="@style/WineSubtitle"/>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -55,7 +72,8 @@
                     android:text="wine_company"
                     android:id="@+id/wine_company"
                     android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"/>
+                    android:layout_centerVertical="true"
+                    style="@style/WineText"/>
 
                 <ImageButton
                     android:layout_width="wrap_content"
@@ -63,10 +81,18 @@
                     android:id="@+id/go_to_web_button"
                     android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
-                    android:background="@drawable/ic_menu_info_details"/>
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/www"/>
 
             </RelativeLayout>
 
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TIPO DEL VINO"
+                android:id="@+id/wine_type_subtitle"
+                style="@style/WineSubtitle"/>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -77,8 +103,23 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="DENOMINACIÒN DE ORIGEN"
+                android:id="@+id/wine_origin_subtitle"
+                style="@style/WineSubtitle"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="wine_origin"
-                android:id="@+id/wine_origin"/>
+                android:id="@+id/wine_origin"
+                style="@style/WineText"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="UVA"
+                android:id="@+id/grape_container_subtitle"
+                style="@style/WineSubtitle"/>
 
             <ScrollView
                 android:layout_width="match_parent"
@@ -93,6 +134,7 @@
                 </LinearLayout>
             </ScrollView>
         </LinearLayout>
+        </ScrollView>
     </LinearLayout>
 
     <ScrollView
@@ -105,7 +147,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="wine_notes"
-            android:id="@+id/wine_notes"/>
+            android:id="@+id/wine_notes"
+             style="@style/WineNotes"/>
     </ScrollView>
 
 

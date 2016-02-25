@@ -9,7 +9,7 @@
 <android.support.v7.widget.Toolbar
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/background_material_dark"
+    android:background="@color/baccus"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
     android:elevation="10dp"
